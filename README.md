@@ -71,6 +71,68 @@ $ mau deploy
 
 With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
+## Technologies Used
+
+This project is built using the following technologies and libraries:
+
+### 🚀 Backend Framework & Core
+
+- **[NestJS](https://nestjs.com/)** – A progressive Node.js framework for building efficient, scalable server-side applications.
+  - `@nestjs/common`
+  - `@nestjs/core`
+  - `@nestjs/platform-express`
+
+### ⚙️ Configuration & Utilities
+
+- `@nestjs/config` – For environment-based configuration management.
+- `@nestjs/throttler` – Rate-limiting to prevent abuse.
+- `cookie-parser` – Parse HTTP request cookies.
+- `cross-env` – Set environment variables across platforms.
+
+### 🔐 Authentication & Authorization
+
+- `@nestjs/jwt` – JWT utilities for authentication.
+- `bcrypt` – For hashing and verifying passwords.
+
+### 🧠 Data Validation & Transformation
+
+- `class-validator` – For request validation using decorators.
+- `class-transformer` – For transforming and exposing class properties.
+- `joi` – Schema description and validation.
+
+### 🗃️ Database & ORM
+
+- **PostgreSQL** – Relational database.
+  - `pg` – PostgreSQL client for Node.js.
+- **TypeORM** – ORM for TypeScript and JavaScript.
+  - `@nestjs/typeorm`
+  - `typeorm`
+
+### 📦 API & HTTP Clients
+
+- `@nestjs/axios` – Axios integration for NestJS.
+- `axios` – Promise-based HTTP client.
+
+### 📧 Email Support
+
+- `nodemailer` – For sending emails.
+
+### 🧪 API Documentation
+
+- `@nestjs/swagger` – Swagger (OpenAPI) integration for automatic API documentation.
+
+### 🧵 Observables & Streams
+
+- `rxjs` – Reactive Extensions for JavaScript.
+
+### 🧱 Decorator Support
+
+- `reflect-metadata` – Used by TypeScript decorators.
+
+---
+
+This structure follows best practices for technical documentation. If you'd like, I can format your entire README for you — just let me know!
+
 ## Resources
 
 Check out a few resources that may come in handy when working with NestJS:
