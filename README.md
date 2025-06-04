@@ -22,9 +22,65 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## 📦 POS & Inventory Management System – Backend
+
+This is the backend of a comprehensive full-stack Point-of-Sale (POS) and Inventory Management System built with NestJS, PostgreSQL, and TypeORM. It serves as the backbone for managing products, inventory, user authentication, and processing sales transactions.
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+- `Clone the Repository:`
+
+```js
+git clone https://github.com/alive1258/pos-backend
+
+```
+
+- `Navigate to Project Directory:`
+
+```js
+cd [Project Directory]
+```
+
+- `Create a .env.development file in the root folder of the frontend project.`
+- `Add the following environment variable`
+
+```js
+ # AWS S3 Bucket
+S3_BUCKET=your-s3-bucket-name
+
+# PostgreSQL Database Configuration
+DB_HOST=your-database-host
+DB_PORT=your-database-port
+DB_USER=your-database-username
+DB_PASS=your-database-password
+DB_NAME=your-database-name
+DB_SYNC=true
+DB_AUTO_LOAD_ENTITIES=true
+
+# Profile Management
+PROFILE_API_KEY=your-profile-api-key
+
+# JWT Configuration
+JWT_SECRET=your-jwt-secret
+JWT_TOKEN_AUDIENCE=your-token-audience
+JWT_TOKEN_ISSUER=your-token-issuer
+JWT_ACCESS_TOKEN_TTL=3600
+JWT_REFRESH_TOKEN_TTL=864600
+
+# API Version
+API_VERSION=0.1.1
+
+# Email Configuration (SMTP)
+MAIL_HOST=your-mail-host
+MAIL_PORT=your-mail-port
+MAIL_SECURE=true
+SMTP_USERNAME=your-email-username
+SMTP_PASSWORD=your-email-password
+
+
+```
 
 ## Project setup
 
@@ -45,26 +101,62 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
 ## Technologies Used
 
-This project is built using the following technologies and libraries:
+This project uses a modern tech stack for building a scalable, secure, and performant full-stack application.
 
-### 🚀 Backend Framework & Core
+## Tech Stack (Backend)
 
-- **[NestJS](https://nestjs.com/)** – A progressive Node.js framework for building efficient, scalable server-side applications.
+```bash
+| Category          | Technologies & Libraries |
+| ----------------- | ------------------------ |
+| **Framework**     | NestJS                   |
+| **Database**      | PostgreSQL + TypeORM     |
+| **Validation**    | class-validator, Joi     |
+| **Security**      | JWT, bcrypt              |
+| **Rate Limiting** | @nestjs/throttler        |
+| **HTTP Client**   | Axios                    |
+| **Email Service** | Nodemailer               |
+| **Config Mgmt**   | @nestjs/config, dotenv   |
+
+```
+
+## 📡 API Requirements (Backend - NestJS)
+
+These are the core RESTful API endpoints required for the POS & Inventory Management system:
+
+Product Endpoints
+
+- `GET /products`
+  -🔹 Fetch all available products.
+  -📌 Used to display product listings.
+
+- `POST /products`
+  - 🔹 Create a new product entry.
+    -📝 Required fields: `name`, `code`, `price`, `stockQty`.
+
+-`GET /products/search?q=milk`
+-🔹 Search for products by name or code (partial match supported).
+-📌 Helps users quickly find items in the inventory.
+
+- `PUT /products/:id`
+  -🔹 Update product information (e.g., name, price, stock quantity).
+  -📌 Mainly used for stock adjustments or price updates.
+
+  ## 🧾 Sales / POS Endpoints
+
+  -`POST /sales`
+  -🔹 Accepts cart items from the frontend, processes the order, and:
+
+  -Reduces stock quantity of the sold products
+
+  -Records the sale transaction
+
+  -Optionally triggers confirmation messages
+
+### 🚀⚙️ Backend (NestJS)
+
+- **[NestJS](https://nestjs.com/)** – NestJS – Progressive Node.js framework for building efficient and scalable server-side applications.
   - `@nestjs/common`
   - `@nestjs/core`
   - `@nestjs/platform-express`
