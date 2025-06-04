@@ -69,65 +69,9 @@ export class SaleSummariesController {
   @ApiOperation({
     summary: 'Get all the data.',
   })
-  findAll(
-    @Req() req: Request,
-    @Query() getSaleSummariesDto: GetSaleSummariesDto,
-  ) {
-    return this.saleSummariesService.findAll();
+  findAll(@Query() getSaleSummariesDto: GetSaleSummariesDto) {
+    return this.saleSummariesService.findAll(getSaleSummariesDto);
   }
-
-  /**
-   * Get all sale report controller
-   */
-  // @Get('sale-reports')
-  // @ApiQuery({
-  //   name: 'limit',
-  //   type: 'string',
-  //   required: false,
-  //   description: 'The number of entries returned per query',
-  //   example: '10',
-  // })
-  // @ApiQuery({
-  //   name: 'page',
-  //   type: 'string',
-  //   required: false,
-  //   description: 'The page that wanted.',
-  //   example: '1',
-  // })
-  // @ApiQuery({
-  //   name: 'search',
-  //   type: 'string',
-  //   required: false,
-  //   description: 'Search anything that you want.',
-  //   example: 'First',
-  // })
-  // @ApiOperation({
-  //   summary: 'Get all the data.',
-  // })
-  // findAllSaleReport(
-  //   @Req() req: Request,
-  //   @Query() getSaleReports: GetSaleReportsDto,
-  // ) {
-  //   return this.saleSummariesService.findAllSaleReports(req, getSaleReports);
-  // }
-
-  /**
-   * Get single sale summary controller
-   */
-  // @Get('/get-invoice/:id')
-  // @ApiParam({
-  //   name: 'invoice number',
-  //   type: 'string',
-  //   required: true,
-  //   description: 'The params is required to get single data',
-  //   example: 'sale-invoice-1250',
-  // })
-  // @ApiOperation({
-  //   summary: 'Get single data.',
-  // })
-  // findSingleInvoice(@Param('id') invoice: string) {
-  //   return this.saleSummariesService.findSingleInvoice(invoice);
-  // }
 
   /**
    * Get single sale summary controller
@@ -144,7 +88,7 @@ export class SaleSummariesController {
     summary: 'Get single data.',
   })
   findOne(@Param('id') id: string) {
-    return this.saleSummariesService.findOne(+id);
+    return this.saleSummariesService.findOne(id);
   }
 
   @Patch(':id')
