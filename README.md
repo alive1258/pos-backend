@@ -45,19 +45,6 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
@@ -65,7 +52,7 @@ When you're ready to deploy your NestJS application to production, there are som
 If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
 
 ```bash
-$ npm install -g mau
+$ npm install
 $ mau deploy
 ```
 
@@ -121,6 +108,12 @@ This project is built using the following technologies and libraries:
 
 - `@nestjs/swagger` – Swagger (OpenAPI) integration for automatic API documentation.
 
+```bash
+-After running the project, you can view the API documentation in your browser at:
+$ http://localhost:5000/api/v1/swagger
+
+```
+
 ### 🧵 Observables & Streams
 
 - `rxjs` – Reactive Extensions for JavaScript.
@@ -130,8 +123,6 @@ This project is built using the following technologies and libraries:
 - `reflect-metadata` – Used by TypeScript decorators.
 
 ---
-
-This structure follows best practices for technical documentation. If you'd like, I can format your entire README for you — just let me know!
 
 ## Resources
 
