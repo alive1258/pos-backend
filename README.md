@@ -43,7 +43,7 @@ git clone https://github.com/alive1258/pos-backend
 cd [Project Directory]
 ```
 
-- `Create a .env.development file in the root folder of the frontend project.`
+- `Create a .env.development file in the root folder of the  project.`
 - `Add the following environment variable`
 
 ```js
